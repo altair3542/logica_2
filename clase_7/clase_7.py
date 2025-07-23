@@ -37,33 +37,61 @@
 #     else:
 #         print("Opcion invalida.")
 
-agenda = {}
+# agenda = {}
+
+# while True:
+#     print("\n--- AGENDA DE CONTACTOS ---")
+#     print("1. Agregar contacto")
+#     print("2. Buscar contacto")
+#     print("3. Listar contactos")
+#     print("4. Salir")
+#     opcion = input("Seleccione una opción: ")
+
+#     if opcion == "1":
+#         nombre = input("Nombre: ")
+#         telefono = input("Teléfono: ")
+#         agenda[nombre] = telefono
+#         print("Contacto agregado.")
+#     elif opcion == "2":
+#         nombre = input("Nombre a buscar: ")
+#         if nombre in agenda:
+#             print("Teléfono:", agenda[nombre])
+#         else:
+#             print("Contacto no encontrado.")
+#     elif opcion == "3":
+#         print("--- Lista de contactos ---")
+#         for nombre, telefono in agenda.items():
+#             print(f"{nombre}: {telefono}")
+#     elif opcion == "4":
+#         print("Saliendo de la agenda.")
+#         break
+#     else:
+#         print("Opción inválida.")
+
+
+# Ejemplo 3: Sistema de votación básico
+
+candidatos = {"A": 0, "B": 0, "C": 0}
 
 while True:
-    print("\n--- AGENDA DE CONTACTOS ---")
-    print("1. Agregar contacto")
-    print("2. Buscar contacto")
-    print("3. Listar contactos")
-    print("4. Salir")
-    opcion = input("Seleccione una opción: ")
+    print("\n--- Votaciones ---")
+    print("1. Votar")
+    print("2. Ver Resultados")
+    print("3. Salir")
+    opcion = input("Seleccione una opcion: ")
 
     if opcion == "1":
-        nombre = input("Nombre: ")
-        telefono = input("Teléfono: ")
-        agenda[nombre] = telefono
-        print("Contacto agregado.")
-    elif opcion == "2":
-        nombre = input("Nombre a buscar: ")
-        if nombre in agenda:
-            print("Teléfono:", agenda[nombre])
+        voto = input("Elija un candidato (A, B, C)").upper()
+        if voto in candidatos:
+            candidatos[voto] += 1
         else:
-            print("Contacto no encontrado.")
+            print("Candidato no válido.")
+    elif opcion == "2":
+        print("Resultados: ")
+        for candidato, votos in candidatos.items():
+            print(f"Candidato {candidato}: {votos} voto(s)")
     elif opcion == "3":
-        print("--- Lista de contactos ---")
-        for nombre, telefono in agenda.items():
-            print(f"{nombre}: {telefono}")
-    elif opcion == "4":
-        print("Saliendo de la agenda.")
+        print("Fin del sistema de votacion.")
         break
     else:
-        print("Opción inválida.")
+        print("Opcion Invalida")
